@@ -30,9 +30,11 @@ This application allows you to send your phone's audio to any device on the loca
 * **Smart Auto-Connect**: The app can automatically connect to prioritized IP addresses as soon as they are detected on the network, even in the background.
 * **Widgets & Quick Settings**: Control your server or client directly from your home screen using Material You widgets, or use the Quick Settings tiles in your notification shade for instant access.
 * **Internal Audio Streaming**: Stream your device's internal audio (apps, games, music) to other devices (requires Android 10+).  
-* **Automatic & Smart Manual Discovery**: Clients automatically find available servers via mDNS. If entering an IP manually, the app automatically detects if the host is using Unicast or Multicast.
+* **Automatic & Smart Manual Discovery**: Clients automatically find available servers on the local network. If entering an IP manually, the app automatically detects if the host is using Unicast or Multicast.
 * **Network Interface Selection**: Manually select your active network interface to bypass VPN routing issues or handle multiple Wi-Fi/LAN connections.
 * **Server Volume Control**: Adjust the transmission volume directly from the UI or by using your device's physical volume buttons while streaming.
+* **Microphone Sharing**: Stream your microphone to the server, with a dedicated mute button to silence it mid-session without disconnecting.
+* **Connection Sounds**: The app plays a sound on connect and disconnect, so you always know what's happening. Both are toggleable in settings.
 * **Modern Interface**: Built with **Jetpack Compose** and **Material Expressive**, featuring dynamic colors and bilingual support (EN/IT).
 
 ---
@@ -49,7 +51,7 @@ Choose the best streaming protocol for your needs:
 
 ## 💻 Desktop Version  
 
-The project is also available for **Windows and Linux**!  
+The project is also available for **Windows, macOS, and Linux**!  
 Turn your computer into a wireless audio transmitter or receiver.  
 
 [![Available on GitHub](https://img.shields.io/badge/Available%20on-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/marcomorosi06/WiFiAudioStreaming-Desktop/)  
@@ -62,14 +64,14 @@ Turn your computer into a wireless audio transmitter or receiver.
 ### Required Permissions  
 * **Screen Capture (for Internal Audio)**: To stream internal audio, Android requires starting a temporary "screen capture" session. Only audio is recorded, no images.  
 * **Notifications**: A persistent notification keeps the streaming service active and stable in the background.  
-* **Audio (Optional)**: `RECORD_AUDIO` is only requested if you manually enable the experimental microphone streaming feature in the settings.
+* **Audio (Optional)**: `RECORD_AUDIO` is only requested if you enable microphone sharing in the settings.
 
 ---
 
 ### Sending Audio (Server Mode)  
 1. Launch the app and select **Send (Server)**.  
 2. In **Audio Source**, enable **Internal Audio**.  
-3. Choose your preferred protocol in the settings (WFAS, RTP, or HTTP Web). Fred lives in the title!
+3. Choose your preferred protocol in the settings (WFAS, RTP, or HTTP Web).
 4. For WFAS/RTP, choose **Multicast** (multiple clients) or **Unicast** (single client).  
 5. Tap **Start Server**.  
 
@@ -88,7 +90,7 @@ Turn your computer into a wireless audio transmitter or receiver.
 To build the project from source code:  
 
 ```bash
-git clone [https://gitlab.com/marcomorosi.dev/wifiaudiostreaming-android.git](https://gitlab.com/marcomorosi.dev/wifiaudiostreaming-android.git)
+git clone https://gitlab.com/marcomorosi.dev/wifiaudiostreaming-android.git
 ```  
 
 Open the project with [Android Studio](https://developer.android.com/studio?hl=en), sync the Gradle dependencies, and run.
